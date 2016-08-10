@@ -32,15 +32,17 @@ module RedmineTimeEntryEvents
         request.add_field 'Content-Type', 'application/json'
         request.body = {event: event, time_entry: data, token: token}.to_json
 
-        (0..tries).each { |_|
+        counter = 0
+        while counter < tries
+          counter = counter + 1
           begin
             response = http.request request
-            if response.value == 200
-              return;
+            if response.code == '200'
+              return
             end
           rescue # ignored
           end
-        }
+        end
 
         log = File.open('log/redmine_time_entry_events.error.log', 'a+')
         log.puts request.body.to_json
