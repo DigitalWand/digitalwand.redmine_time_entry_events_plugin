@@ -1,0 +1,34 @@
+<table>
+  <tbody>
+  <tr>
+    <th>Адрес для отправки событий</th>
+    <td>
+      <%= text_field_tag('settings[address]', value = settings['address'], required: 'required', style: 'width: 350px;') %>
+    </td>
+  </tr>
+  <tr>
+    <th>Имя пользователя HTTP-Auth (если требуется)</th>
+    <td>
+      <%= text_field_tag('settings[http_login]', value = settings['http_login'], style: 'width: 350px;') %>
+    </td>
+  </tr>
+  <tr>
+    <th>Пароль HTTP-Auth (если требуется)</th>
+    <td>
+      <%= password_field_tag('settings[http_pass]', value = settings['http_pass'], style: 'width: 350px;') %>
+    </td>
+  </tr>
+  <tr>
+    <th>Токен (если требуется, будет отправлятсья с каждым запросом)</th>
+    <td>
+      <%= text_field_tag('settings[token]', value = settings['token'], style: 'width: 350px;') %>
+    </td>
+  </tr>
+  <tr>
+    <th>Количество попыток отправки уведомления</th>
+    <td>
+      <%= number_field_tag('settings[tries]', value = settings['tries'], style: 'width: 350px;') %>
+    </td>
+  </tr>
+  </tbody>
+</table>
