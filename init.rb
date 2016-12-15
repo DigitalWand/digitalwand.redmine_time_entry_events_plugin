@@ -11,6 +11,6 @@ Redmine::Plugin.register :redmine_time_entry_events do
   description 'This is a plugin for Redmine'
   version '0.0.1'
 
-  settings :default => {tries: 3}, :partial => 'settings/activity'
+  settings :default => {tries: 3}, :partial => 'settings/time_entry_events'
 end
 
