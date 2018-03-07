@@ -44,7 +44,7 @@ module RedmineTimeEntryEvents
           end
         end
 
-        log = File.open('log/redmine_time_entry_events.error.log', 'a+')
+        log = File.open("#{File.dirname(__FILE__)}/../../../../../log/redmine_time_entry_events.error.log", 'a+')
         log.puts request.body.to_json
         log.close
       end
